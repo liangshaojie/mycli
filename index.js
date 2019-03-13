@@ -11,6 +11,29 @@ program
     .version(require('./package').version)
     .usage('<command> [options]')
 
+
+program
+    .command('info')
+    .description('print debugging information about your environment')
+    .action((cmd) => {
+        console.log(chalk.bold('\nEnvironment Info:'))
+        //这里用的第三方库
+        require('envinfo').run(
+            {
+                System: ['OS', 'CPU'],
+                Binaries: ['Node', 'Yarn', 'npm'],
+                Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
+                npmPackages: '/**/{typescript,*vue*,@vue/*/}',
+                npmGlobalPackages: ['@vue/cli']
+            },
+            {
+                showNotFound: true,
+                duplicates: true,
+                fullTree: true
+            }
+        ).then(console.log)
+    })
+
 //未知命令
 program
     .arguments('<command>')
