@@ -1,0 +1,228 @@
+[
+    {
+        "name": "preset",
+        "type": "list",
+        "message": "Please pick a preset:",
+        "choices": [
+            {
+                "name": "default (babel, eslint)",
+                "value": "default"
+            },
+            {
+                "name": "Manually select features",
+                "value": "__manual__"
+            }
+        ]
+    },
+    {
+        "name": "features",
+        "type": "checkbox",
+        "message": "Check the features needed for your project:",
+        "choices": [
+            {
+                "name": "Babel",
+                "value": "babel",
+                "short": "Babel",
+                "description": "Transpile modern JavaScript to older versions (for compatibility)",
+                "link": "https://babeljs.io/",
+                "checked": true
+            },
+            {
+                "name": "TypeScript",
+                "value": "ts",
+                "short": "TS",
+                "description": "Add support for the TypeScript language",
+                "link": "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript",
+                "plugins": [
+                    "typescript"
+                ]
+            },
+            {
+                "name": "Progressive Web App (PWA) Support",
+                "value": "pwa",
+                "short": "PWA",
+                "description": "Improve performances with features like Web manifest and Service workers",
+                "link": "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa"
+            },
+            {
+                "name": "Router",
+                "value": "router",
+                "description": "Structure the app with dynamic pages",
+                "link": "https://router.vuejs.org/"
+            },
+            {
+                "name": "Vuex",
+                "value": "vuex",
+                "description": "Manage the app state with a centralized store",
+                "link": "https://vuex.vuejs.org/"
+            },
+            {
+                "name": "CSS Pre-processors",
+                "value": "css-preprocessor",
+                "description": "Add support for CSS pre-processors like Sass, Less or Stylus",
+                "link": "https://cli.vuejs.org/guide/css.html"
+            },
+            {
+                "name": "Linter / Formatter",
+                "value": "linter",
+                "short": "Linter",
+                "description": "Check and enforce code quality with ESLint or Prettier",
+                "link": "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint",
+                "plugins": [
+                    "eslint"
+                ],
+                "checked": true
+            },
+            {
+                "name": "Unit Testing",
+                "value": "unit",
+                "short": "Unit",
+                "description": "Add a Unit Testing solution like Jest or Mocha",
+                "link": "https://cli.vuejs.org/config/#unit-testing",
+                "plugins": [
+                    "unit-jest",
+                    "unit-mocha"
+                ]
+            },
+            {
+                "name": "E2E Testing",
+                "value": "e2e",
+                "short": "E2E",
+                "description": "Add an End-to-End testing solution to the app like Cypress or Nightwatch",
+                "link": "https://github.com/vuejs/vue-cli/tree/dev/docs#e2e-testing",
+                "plugins": [
+                    "e2e-cypress",
+                    "e2e-nightwatch"
+                ]
+            }
+        ],
+        "pageSize": 10
+    },
+    {
+        "name": "tsClassComponent",
+        "type": "confirm",
+        "message": "Use class-style component syntax?",
+        "description": "Use the @Component decorator on classes.",
+        "link": "https://vuejs.org/v2/guide/typescript.html#Class-Style-Vue-Components",
+        "default": true
+    },
+    {
+        "name": "useTsWithBabel",
+        "type": "confirm",
+        "message": "Use Babel alongside TypeScript for auto-detected polyfills?",
+        "description": "It will output ES2015 and delegate the rest to Babel for auto polyfill based on browser targets."
+    },
+    {
+        "name": "routerHistoryMode",
+        "type": "confirm",
+        "message": "Use history mode for router? (Requires proper server setup for index fallback in production)",
+        "description": "By using the HTML5 History API, the URLs don't need the '#' character anymore.",
+        "link": "https://router.vuejs.org/guide/essentials/history-mode.html"
+    },
+    {
+        "name": "cssPreprocessor",
+        "type": "list",
+        "message": "Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default):",
+        "description": "PostCSS, Autoprefixer and CSS Modules are supported by default.",
+        "choices": [
+            {
+                "name": "Sass/SCSS (with dart-sass)",
+                "value": "dart-sass"
+            },
+            {
+                "name": "Sass/SCSS (with node-sass)",
+                "value": "node-sass"
+            },
+            {
+                "name": "Less",
+                "value": "less"
+            },
+            {
+                "name": "Stylus",
+                "value": "stylus"
+            }
+        ]
+    },
+    {
+        "name": "eslintConfig",
+        "type": "list",
+        "message": "Pick a linter / formatter config:",
+        "description": "Checking code errors and enforcing an homogeoneous code style is recommended."
+    },
+    {
+        "name": "lintOn",
+        "message": "Pick additional lint features:",
+        "type": "checkbox",
+        "choices": [
+            {
+                "name": "Lint on save",
+                "value": "save",
+                "checked": true
+            },
+            {
+                "name": "Lint and fix on commit",
+                "value": "commit"
+            }
+        ]
+    },
+    {
+        "name": "unit",
+        "type": "list",
+        "message": "Pick a unit testing solution:",
+        "choices": [
+            {
+                "name": "Mocha + Chai",
+                "value": "mocha",
+                "short": "Mocha"
+            },
+            {
+                "name": "Jest",
+                "value": "jest",
+                "short": "Jest"
+            }
+        ]
+    },
+    {
+        "name": "e2e",
+        "type": "list",
+        "message": "Pick a E2E testing solution:",
+        "choices": [
+            {
+                "name": "Cypress (Chrome only)",
+                "value": "cypress",
+                "short": "Cypress"
+            },
+            {
+                "name": "Nightwatch (Selenium-based)",
+                "value": "nightwatch",
+                "short": "Nightwatch"
+            }
+        ]
+    },
+    {
+        "name": "useConfigFiles",
+        "type": "list",
+        "message": "Where do you prefer placing config for Babel, PostCSS, ESLint, etc.?",
+        "choices": [
+            {
+                "name": "In dedicated config files",
+                "value": "files"
+            },
+            {
+                "name": "In package.json",
+                "value": "pkg"
+            }
+        ]
+    },
+    {
+        "name": "save",
+        "type": "confirm",
+        "message": "Save this as a preset for future projects?",
+        "default": false
+    },
+    {
+        "name": "saveName",
+        "type": "input",
+        "message": "Save preset as:"
+    }
+]
